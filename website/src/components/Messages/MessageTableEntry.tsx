@@ -15,7 +15,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { boolean } from "boolean";
-import { ClipboardList, Copy, Flag, MessageSquare, MoreHorizontal, Slash, Trash, User } from "lucide-react";
+import { ClipboardList, Copy, Flag, MessageSquare, MoreHorizontal, Slash, Trash, User, View } from "lucide-react";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 import { useTranslation } from "next-i18next";
@@ -220,6 +220,9 @@ const MessageActions = ({
           {t("report_action")}
         </MenuItem>
         <MenuDivider />
+        <MenuItem onClick={(e) => console.log("view reportsr")} icon={<View />}>
+          {t("view_reports")}
+        </MenuItem>
         <MenuItem as="a" href={`/messages/${message.id}`} target="_blank" icon={<MessageSquare />}>
           {t("open_new_tab_action")}
         </MenuItem>
