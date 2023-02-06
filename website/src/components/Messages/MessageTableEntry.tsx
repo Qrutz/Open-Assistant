@@ -23,6 +23,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { LabelMessagePopup } from "src/components/Messages/LabelPopup";
 import { MessageEmojiButton } from "src/components/Messages/MessageEmojiButton";
 import { ReportPopup } from "src/components/Messages/ReportPopup";
+import { ViewReportsPopup } from "src/components/Messages/ViewReportsPopup";
 import { del, post, put } from "src/lib/api";
 import { colors } from "src/styles/Theme/colors";
 import { Message, MessageEmojis } from "src/types/Conversation";
@@ -49,6 +50,7 @@ export function MessageTableEntry({ message, enabled, highlight }: MessageTableE
   const goToMessage = useCallback(() => router.push(`/messages/${message.id}`), [router, message.id]);
   const { isOpen: reportPopupOpen, onOpen: showReportPopup, onClose: closeReportPopup } = useDisclosure();
   const { isOpen: labelPopupOpen, onOpen: showLabelPopup, onClose: closeLabelPopup } = useDisclosure();
+  const { isOpen: viewReportsPopupOpen, onOpen: showViewReportsPopup, onClose: closeViewReportsPopup } = useDisclosure();
 
   const backgroundColor = useColorModeValue("gray.100", "gray.700");
   const backgroundColor2 = useColorModeValue("#DFE8F1", "#42536B");
@@ -115,10 +117,12 @@ export function MessageTableEntry({ message, enabled, highlight }: MessageTableE
             userEmoji={emojiState.user_emojis}
             onLabel={showLabelPopup}
             onReport={showReportPopup}
+            onViewReports={showViewReportsPopup}
             message={message}
           />
           <LabelMessagePopup messageId={message.id} show={labelPopupOpen} onClose={closeLabelPopup} />
           <ReportPopup messageId={message.id} show={reportPopupOpen} onClose={closeReportPopup} />
+          <ViewReportsPopup messageId={message.id} show={viewReportsPopupOpen} onClose={closeViewReportsPopup} />
         </HStack>
       </Box>
     </HStack>
@@ -150,12 +154,14 @@ const MessageActions = ({
   userEmoji,
   onLabel,
   onReport,
+  onViewReports,
   message,
 }: {
   react: (emoji: string, state: boolean) => void;
   userEmoji: string[];
   onLabel: () => void;
   onReport: () => void;
+  onViewReports?: () => void;
   message: Message;
 }) => {
   const toast = useToast();
@@ -220,8 +226,8 @@ const MessageActions = ({
           {t("report_action")}
         </MenuItem>
         <MenuDivider />
-        <MenuItem onClick={(e) => console.log("view reportsr")} icon={<View />}>
-          {t("view_reports")}
+        <MenuItem onClick={onViewReports} icon={<View />}>
+          {t("view_reports_action")}
         </MenuItem>
         <MenuItem as="a" href={`/messages/${message.id}`} target="_blank" icon={<MessageSquare />}>
           {t("open_new_tab_action")}
