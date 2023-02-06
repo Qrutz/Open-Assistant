@@ -6,6 +6,7 @@
   "parent": "상위",
   "reactions": "반응",
   "report_action": "리포트",
+  "view_reports_action": "보고서 보기",
   "report_placeholder": "이 메시지를 검토해야 하는 이유는 무엇입니까?",
   "report_title": "리포트",
   "send_report": "보내기",

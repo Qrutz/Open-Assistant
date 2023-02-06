@@ -6,6 +6,7 @@
   "parent": "الأصل",
   "reactions": "الردود",
   "report_action": "تبليغ",
+  "view_reports_action": "عرض التقارير",
   "report_placeholder": "لماذا يجب استعراض هذه الرسالة؟",
   "report_title": "تبليغ",
   "send_report": "إرسال",

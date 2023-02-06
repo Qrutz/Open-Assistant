@@ -6,6 +6,7 @@
   "parent": "Szülő",
   "reactions": "Reakciók",
   "report_action": "Jelentés",
+  "view_reports_action": "Jelentések megtekintése",
   "report_placeholder": "Mi a probléma ezzel az üzenettel?",
   "report_title": "Bejelentés",
   "send_report": "Beküldés",

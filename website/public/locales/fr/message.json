@@ -6,6 +6,7 @@
   "parent": "Parent",
   "reactions": "Réactions",
   "report_action": "Signaler",
+  "view_reports_action": "Afficher les rapports",
   "report_placeholder": "Pourquoi ce message devrait-il être examiné?",
   "report_title": "Signaler",
   "send_report": "Envoyer",

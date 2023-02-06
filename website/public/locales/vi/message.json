@@ -6,6 +6,7 @@
   "parent": "Tin nhắn gốc",
   "reactions": "Bình luận",
   "report_action": "Báo cáo",
+  "view_reports_action": "Xem báo cáo",
   "report_placeholder": "Tại sao tin nhắn này cần được báo cáo?",
   "report_title": "Báo cáo",
   "send_report": "Gửi",

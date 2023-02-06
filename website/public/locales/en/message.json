@@ -9,6 +9,7 @@
   "reactions": "Reactions",
   "recent_messages": "Recent Messages",
   "report_action": "Report",
+  "view_reports_action": "View reports",
   "report_placeholder": "Why should this message be reviewed?",
   "report_title": "Report",
   "send_report": "Send",

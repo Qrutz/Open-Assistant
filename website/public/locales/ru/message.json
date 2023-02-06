@@ -6,6 +6,7 @@
   "parent": "Родитель",
   "reactions": "Реакции",
   "report_action": "Пожаловаться",
+  "view_reports_action": "Просматривать отчеты",
   "report_placeholder": "Почему это сообщение должно быть рассмотрено?",
   "report_title": "Пожаловаться",
   "send_report": "Отправить",
